@@ -10,6 +10,15 @@ body {
     justify-content: left;
 }
 
+.tile-upcoming-match {
+    background: #FFFFFF;
+    width: 1600px;
+    height: 600px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
 .tile-past-match {
     background: #FFFFFF;
     padding: 10px;
@@ -26,8 +35,6 @@ body {
     align-items: left;
 }
 
-
-
 .tile-roster {
     background: #FFFFFF;
     padding: 10px;
@@ -41,11 +48,15 @@ body {
 }
 
 .tile-roster:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 
 .tile-past-match:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
+}
+
+.tile-upcoming-match:hover {
+    transform: scale(1.01);
 }
 
 .tile-roster {
