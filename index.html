@@ -2,60 +2,66 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Team Home Page</title>
+    <title>Home Page</title>
+
+    <!-- Import Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 </head>
 <body>
+    <div id="app">
+        <h1>Welcome Coach Derek</h1>
 
-    <h1>Welcome Coach Derek</h1>
+        <h1>Upcoming Match</h1>
+        <div class = tile-container>
+            <div class = tile-upcoming-match>
+                {{upcomingMatch}}
+            </div>
+        </div>
 
-    <h1>Upcoming Match</h1>
-    <div class = tile-container>
-        <div class = tile-upcoming-match>
-            <!-- Insert text (use Javascript) -->
+        <!-- Past Matches Heading -->
+        <h1>Past Matches</h1>
+
+        <div class = tile-container>
+            <ul>
+                <li v-for="match in pastMatches">
+                    <div class = tile-past-match>
+                        <span>{{ match.opponent }}</span>
+                        <span>{{ match.score }}</span>
+                        <span>{{ match.date }}</span>
+                    </div>
+    
+                </li>
+            </ul>
+        </div>
+
+        <!-- Roster Heading -->
+        <h1>Roster</h1>
+        
+        <div class = tile-container>
+            <ul>
+                <li v-for="player in roster">
+                    <div class = tile-roster>
+                        <h2>{{ player.name }}</h2>
+                        <p>Team: {{ school }}</p>
+                        <p>Position: #{{ player.position }}</p>
+                    </div>
+                </li>
+            </div>
+            </ul>
         </div>
     </div>
 
-    
-    <h1>Past Matches</h1>
+    <!-- Import App -->
+    <script src="./main.js"></script>
 
-    <div class = tile-container>
-        <div class = tile-past-match>
-            <span>Stanford</span>
-            <span>4-2</span>
-            <span>January 1st, 2025</span>
-        </div>
-        <div class = tile-past-match>
-            <span>Stanford</span>
-            <span>4-2</span>
-            <span>January 1st, 2025</span>
-        </div>
-        <div class = tile-past-match>
-            <span>Stanford</span>
-            <span>4-2</span>
-            <span>January 1st, 2025</span>
-        </div>
-    </div>
+    <!-- Mount App -->
+     <script>
+        const mountedapp = app.mount('#app');
+     </script>
 
-    <h1>Roster</h1>
-    
-    <div class = tile-container>
-        <div class = tile-roster>
-            <h2>Rudy Quan</h2>
-            <p>Team: UCLA</p>
-            <p>Position: #1</p>
-        </div>
-        <div class = tile-roster>
-            <h2>Emon van Loben Sels</h2>
-            <p>Team: UCLA</p>
-            <p>Position: #2</p>
-        </div>
-        <div class = tile-roster>
-            <h2>Kaylan Bigun</h2>
-            <p>Team: UCLA</p>
-            <p>Position: #3</p>
-        </div>
-    </div>
-    
 </body>
 </html>
